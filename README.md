@@ -2,7 +2,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
-Adding functionality to an existing Budget Tracker application to allow offline access without compromising on the functionality.  This budget tracker works even when the Netork settings are offline and as soon as the network setting are Online, stores the transactions in MongoDB. This app can be installed  on your phone or on PC.
+Adding functionality to an existing Budget Tracker application to allow offline access without compromising on the functionality.  This budget tracker works even when the Network settings are offline. When the netork is avilable(Online), it saves the indexDB transactions into MongoDB. This app can be installed on your phone or on PC.
 
 
 ## Table of Contents
