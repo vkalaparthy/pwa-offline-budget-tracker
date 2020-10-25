@@ -14,7 +14,7 @@ Adding functionality to an existing Budget Tracker application to allow offline 
 * [Questions](#questions)
 
 ## Installation
-This application is located in GitHub at https://github.com/vkalaparthy/pwa-offline-budget-tracker and the application can be accessed from [heroku](https://vk-progressive-budget.herokuapp.com/).  When you open the Heroku app in Chrome, click the menu ⁝ at the top-right of its window and select install "OfflineBudgetTracker" and use the installed App.
+This application is located in GitHub at https://github.com/vkalaparthy/pwa-offline-budget-tracker and the application can be accessed from [heroku](https://vk-progressive-budget.herokuapp.com/).  When you open the Heroku app in Chrome, click the menu ⁝ at the top-right of its window and select install "OfflineBudgetTracker" and use the installed App.  Clone the application from GitHub and run "npm install" to install all the packages and then run "npm start", open a new tab in chrome and go to the localhost:3050 (or any other port if you chnage the change the port number in server.js).
 
 ## Usage
 Install the app from [Heroku ](https://vk-progressive-budget.herokuapp.com/)  and start entering your trasactions.  You will be able to use this App when Network is Online/Offline without loosing the transactions.  Since the App uses MongoDB, you need to have installed the MongoDb to store/retrieve the trasactions. 
