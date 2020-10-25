@@ -5,17 +5,19 @@ const DATA_CACHE_NAME = "data-cache-v1";
 const FILES_TO_CACHE = [
   "/",
   "/index.html",
+  "/db.js",
+  "/index.js",
+  "/favicon.ico",
   "/manifest.webmanifest",
   "/styles.css",
   "/icons/icon-192x192.png",
-  "/icons/icon-512x512.png",
-  "/index.js"
+  "/icons/icon-512x512.png"
 ];
 
 // install
 self.addEventListener("install", function (evt) {
   // pre cache image data
-  console.log("********  In install");
+  // console.log("********  In install");
     
   // pre cache all static assets
   evt.waitUntil(
@@ -28,7 +30,7 @@ self.addEventListener("install", function (evt) {
 });
 
 self.addEventListener("activate", function(evt) {
-  console.log("****  In activate ****");
+  // console.log("****  In activate ****");
   evt.waitUntil(
     caches.keys().then(keyList => {
       return Promise.all(
@@ -45,4 +47,35 @@ self.addEventListener("activate", function(evt) {
   self.clients.claim();
 });
 
+// fetch
+self.addEventListener("fetch", function(evt) {
+  // cache successful requests to the API
+  if (evt.request.url.includes("/api/")) {
+    evt.respondWith(
+      caches.open(DATA_CACHE_NAME).then(cache => {
+        return fetch(evt.request)
+          .then(response => {
+            // If the response was good, clone it and store it in the cache.
+            if (response.status === 200) {
+              cache.put(evt.request.url, response.clone());
+            }
 
+            return response;
+          })
+          .catch(err => {
+            // Network request failed, try to get it from the cache.
+            return cache.match(evt.request);
+          });
+      }).catch(err => console.log(err))
+    );
+
+    return;
+  }
+
+  // if the request is not for the API, serve static assets using "offline-first" approach.
+  evt.respondWith(
+    caches.match(evt.request).then(function(response) {
+      return response || fetch(evt.request);
+    })
+  );
+});
