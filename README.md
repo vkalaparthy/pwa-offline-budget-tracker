@@ -31,6 +31,7 @@ Demo: Note that Budget was $120 before the Network was offline when the transact
 Copyright © 2020-present, Vani Kalaparthy. Released under the MIT License.
 ## Contributing
 ## Tests
+Only manual testing
 
 ## Questions
 * Vani Kalaparthy
