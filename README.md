@@ -24,7 +24,7 @@ Install the app from [Heroku ](https://vk-progressive-budget.herokuapp.com/)  an
 You can clone the app from the GitHub repository from https://github.com/vkalaparthy/pwa-offline-budget-tracke to make any improvements or Run the app in Heroku, [here](https://vk-progressive-budget.herokuapp.com/)    
   
   
-Demo: Note that Budget was $120 before the Network was offline when the transactions were done (one is -75 and other Trans +100)  and everything is correctly refelected after the Network goes to Online.
+Demo: Note that Budget was $120 before the Network was offline when the transactions were done (one is -75 and other one is +100)  and everything is correctly refelected after the Network goes to Online.
 
 ![demo](./images/BudgetTracker.gif) 
 ## License
